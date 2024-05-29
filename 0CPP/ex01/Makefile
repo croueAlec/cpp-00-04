@@ -6,14 +6,14 @@
 #    By: acroue <acroue@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2024/05/29 15:01:36 by acroue           ###   ########.fr        #
+#    Updated: 2024/05/29 15:56:21 by acroue           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 
 #	Program name
-NAME = CHANGE_ME
+NAME = phonebook
 
 #	Colors
 DEFAULT    = \033[0m
@@ -44,10 +44,10 @@ INCLUDES := $(INCS_DIR) \
 INCLUDES_FLAGS := $(addprefix -I , $(INCLUDES))
 
 SRC := \
-	main.c
+	phonebook.cpp
 
-OBJ := $(patsubst %.c,$(OBJS_DIR)/%.o,$(SRC))
-DEPS := $(patsubst %.c,$(OBJS_DIR)/%.d,$(SRC))
+OBJ := $(patsubst %.cpp,$(OBJS_DIR)/%.o,$(SRC))
+DEPS := $(patsubst %.cpp,$(OBJS_DIR)/%.d,$(SRC))
 
 # Rules
 all: $(NAME)
@@ -69,8 +69,6 @@ clean:
 fclean: clean
 	@echo "$(RED)! Removing$(DEFAULT) $(NAME)"
 	@$(RM) $(NAME)
-	@echo "$(RED)! Removing$(DEFAULT) $(TEST_PARSING)"
-	@$(RM) $(TEST_PARSING)
 
 re: fclean all
 
