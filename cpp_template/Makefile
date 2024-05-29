@@ -6,7 +6,7 @@
 #    By: acroue <acroue@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2024/05/29 15:50:48 by acroue           ###   ########.fr        #
+#    Updated: 2024/05/29 15:55:45 by acroue           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,8 +69,6 @@ clean:
 fclean: clean
 	@echo "$(RED)! Removing$(DEFAULT) $(NAME)"
 	@$(RM) $(NAME)
-	@echo "$(RED)! Removing$(DEFAULT) $(TEST_PARSING)"
-	@$(RM) $(TEST_PARSING)
 
 re: fclean all
 
