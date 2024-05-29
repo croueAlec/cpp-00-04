@@ -5,3 +5,4 @@ phonebook
 # Obj files
 objs/
 *.o
+.vscode

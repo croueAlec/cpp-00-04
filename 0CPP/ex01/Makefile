@@ -6,7 +6,7 @@
 #    By: acroue <acroue@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2024/05/29 15:56:21 by acroue           ###   ########.fr        #
+#    Updated: 2024/05/29 19:00:28 by acroue           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ INCLUDES := $(INCS_DIR) \
 INCLUDES_FLAGS := $(addprefix -I , $(INCLUDES))
 
 SRC := \
+	main.cpp \
 	phonebook.cpp
 
 OBJ := $(patsubst %.cpp,$(OBJS_DIR)/%.o,$(SRC))
