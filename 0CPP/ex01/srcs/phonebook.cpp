@@ -20,6 +20,11 @@ std::string	getInfo(std::string message)
 	{
 		throw std::logic_error("Empty contact field, exiting");
 	}
+	for (size_t i = 0; i < input.size(); i++)
+	{
+		if (!std::isalnum(input[i]) && input[i] != '+' && input[i] != '-')
+			throw std::logic_error("You may only use alphanumerical characters as well as '-' and '+'");
+	}
 	return (input);
 }
 

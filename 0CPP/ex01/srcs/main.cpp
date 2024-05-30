@@ -10,6 +10,7 @@ int	main(void)
 	Phonebook	book;
 	try
 	{
+		std::cout << "Type ADD to add a contact in the phonebook, SEARCH to display the phonebook, or EXIT to exit the phonebook." << std::endl;
 		while (!std::cin.eof() && std::getline(std::cin, input))
 		{
 			if (input == "EXIT")
@@ -24,6 +25,7 @@ int	main(void)
 			{
 				book.printPhonebook();
 			}
+			std::cout << "Type ADD to add a contact in the phonebook, SEARCH to display the phonebook, or EXIT to exit the phonebook." << std::endl;
 		}
 	}
 	catch(const std::exception& e)
