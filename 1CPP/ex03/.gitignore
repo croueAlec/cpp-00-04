@@ -1,0 +1,8 @@
+# Executable
+weapons
+# Dependecies
+*.d
+# Obj files
+objs/
+*.o
+.vscode
