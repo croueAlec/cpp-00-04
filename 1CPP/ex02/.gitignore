@@ -1,0 +1,8 @@
+# Executable
+brain
+# Dependecies
+*.d
+# Obj files
+objs/
+*.o
+.vscode
