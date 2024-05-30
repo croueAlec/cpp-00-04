@@ -6,7 +6,7 @@
 #    By: acroue <acroue@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2024/05/29 15:55:45 by acroue           ###   ########.fr        #
+#    Updated: 2024/05/30 11:12:54 by acroue           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ INCLUDES := $(INCS_DIR) \
 INCLUDES_FLAGS := $(addprefix -I , $(INCLUDES))
 
 SRC := \
-	main.c
+	main.cpp
 
 OBJ := $(patsubst %.cpp,$(OBJS_DIR)/%.o,$(SRC))
 DEPS := $(patsubst %.cpp,$(OBJS_DIR)/%.d,$(SRC))
