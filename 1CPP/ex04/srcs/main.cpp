@@ -11,13 +11,13 @@ void	openInfile(std::string infileName, std::ifstream& inputFile)
 		inputFile.open(infileName.c_str());
 		if (!inputFile.good())
 			throw std::invalid_argument("error : Infile does not exist");
-		if (inputFile.eof())
+		if (inputFile.peek() == std::ifstream::traits_type::eof())
 		{
 			inputFile.close();
 			throw std::invalid_argument("error : Input file is empty");
 		}
 	}
-	catch(const std::ifstream::failure& e)
+	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 		exit(1);
@@ -32,7 +32,7 @@ void	openOutfile(std::string outfileName, std::ofstream& outputFile, std::ifstre
 		if (!outputFile.good())
 			throw std::invalid_argument("error : Outfile failed to open");
 	}
-	catch(const std::ofstream::failure& e)
+	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 		inputFile.close();
