@@ -4,7 +4,7 @@
 #include "contact.hpp"
 #include "phonebook.hpp"
 
-int	main(int argc, char *argv[])
+int	main(void)
 {
 	std::string	input;
 	Phonebook	book;
@@ -30,7 +30,5 @@ int	main(int argc, char *argv[])
 	{
 		std::cerr << e.what() << '\n';
 	}
-	(void)argc;
-	(void)argv;
 	return (0);
 }
