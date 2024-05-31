@@ -40,6 +40,50 @@ void	openOutfile(std::string outfileName, std::ofstream& outputFile, std::ifstre
 	}
 }
 
+// int main(int argc, char const *argv[])
+// {
+// 	if (argc != 4)
+// 	{
+// 		std::cerr << "error : Invalid argument number" << std::endl;
+// 		return (1);
+// 	}
+
+// 	std::string		fileName(argv[1]);
+// 	std::ifstream	inputFile;
+// 	openInfile(fileName, inputFile);
+
+// 	fileName.append(".replace");
+// 	std::ofstream	outputFile;
+// 	openOutfile(fileName, outputFile, inputFile);
+
+// 	std::string	s1(argv[2]);
+// 	std::string	s2(argv[3]);
+// 	std::string	input;
+// 	bool		notFirstLine = 0;
+// 	while (!inputFile.eof() && std::getline(inputFile, input))
+// 	{
+// 		if (notFirstLine)
+// 			outputFile << "\n";
+
+// 		for (size_t i = 0, j = 0; i < input.size(); i = input.find(s1, i))
+// 		{
+// 			if (input.find(s1, i) == std::string::npos)
+// 			{
+// 				outputFile << input.substr(i, j);
+// 				break ;
+// 			}
+// 			else
+// 			{
+// 				outputFile << input.substr(i, input.find(s1, i)) << s2;
+// 			}
+// 		}
+// 		notFirstLine = 1;
+// 	}
+// 	outputFile.close();
+// 	inputFile.close();
+// 	return (0);
+// }
+
 int main(int argc, char const *argv[])
 {
 	if (argc != 4)
