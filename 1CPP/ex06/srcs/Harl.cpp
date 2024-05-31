@@ -17,7 +17,7 @@ void	Harl::complain(std::string level)
 {
 	if (levelMap.find(level) != levelMap.end())
 	{
-		switch (levelMap[level])
+		switch (levelMap[level]) /* FALLING THROUGH THIS SWITCH CASE IS VOLUNTARY */
 		{
 		case 0:
 			debug();
