@@ -1,0 +1,8 @@
+# Executable
+harlFilter
+# Dependecies
+*.d
+# Obj files
+objs/
+*.o
+.vscode
