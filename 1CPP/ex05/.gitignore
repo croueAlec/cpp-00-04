@@ -1,0 +1,8 @@
+# Executable
+harl2_0
+# Dependecies
+*.d
+# Obj files
+objs/
+*.o
+.vscode
