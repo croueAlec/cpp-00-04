@@ -1,11 +1,13 @@
 #include <string>
 #include <iostream>
-#include <map>
+
+typedef void	(*f)();
 
 class Harl
 {
 private:
-	std::map<std::string, void (Harl::*)()> levelMap;
+	std::string	levelString[4];
+	void		(Harl::*f[4])();
 	void	debug(void);
 	void	info(void);
 	void	warning(void);

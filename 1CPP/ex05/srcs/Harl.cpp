@@ -2,10 +2,14 @@
 
 Harl::Harl()
 {
-	levelMap["DEBUG"] = &Harl::debug;
-	levelMap["INFO"] = &Harl::info;
-	levelMap["WARNING"] = &Harl::warning;
-	levelMap["ERROR"] = &Harl::error;
+	levelString[0] = "DEBUG";
+	levelString[1] = "INFO";
+	levelString[2] = "WARNING";
+	levelString[3] = "ERROR";
+	f[0] = &Harl::debug;
+	f[1] = &Harl::info;
+	f[2] = &Harl::warning;
+	f[3] = &Harl::error;
 }
 
 Harl::~Harl()
@@ -14,10 +18,15 @@ Harl::~Harl()
 
 void	Harl::complain(std::string level)
 {
-	if (this->levelMap.find(level) != this->levelMap.end())
+	for (size_t i = 0; i < 4; i++)
 	{
-		(this->*levelMap[level])();
+		if (level.compare(levelString[i]) == 0)
+		{
+			(this->*f[i])();
+			return ;
+		}
 	}
+	
 }
 
 void	Harl::debug(void)
