@@ -3,21 +3,31 @@
 
 Harl::Harl()
 {
-	levelMap["DEBUG"] = 0;
-	levelMap["INFO"] = 1;
-	levelMap["WARNING"] = 2;
-	levelMap["ERROR"] = 3;
+	levelString[0] = "DEBUG";
+	levelString[1] = "INFO";
+	levelString[2] = "WARNING";
+	levelString[3] = "ERROR";
 }
 
 Harl::~Harl()
 {
 }
 
+size_t		Harl::findIndex(std::string level)
+{
+	for (size_t i = 0; i < 4; i++)
+	{
+		if (level.compare(levelString[i]) == 0)
+			return (i);
+	}
+	return (5);
+}
+
 void	Harl::complain(std::string level)
 {
-	if (levelMap.find(level) != levelMap.end())
+	if (findIndex(level) <= 3)
 	{
-		switch (levelMap[level]) /* FALLING THROUGH THIS SWITCH CASE IS VOLUNTARY */
+		switch (findIndex(level)) /* FALLING THROUGH THIS SWITCH CASE IS VOLUNTARY */
 		{
 		case 0:
 			debug();

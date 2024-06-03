@@ -1,11 +1,12 @@
 #include <string>
 #include <iostream>
-#include <map>
+
+typedef void	(*f)();
 
 class Harl
 {
 private:
-	std::map<std::string, int> levelMap;
+	std::string	levelString[4];
 	void	debug(void);
 	void	info(void);
 	void	warning(void);
@@ -14,4 +15,5 @@ public:
 	Harl();
 	~Harl();
 	void	complain(std::string level);
+	size_t	findIndex(std::string level);
 };
