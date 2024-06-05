@@ -1,0 +1,8 @@
+# Executable
+firstCanonicalForm
+# Dependecies
+*.d
+# Obj files
+objs/
+*.o
+.vscode
