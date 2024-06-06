@@ -2,8 +2,9 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "Default constructor" << std::endl;
 	name = "default";
+	std::cout << "[" << this->name << "]" << std::flush;
+	std::cout << " efault constructor" << std::endl;
 	health = 10;
 	energy = 10;
 	attackDamage = 0;
@@ -11,7 +12,8 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string name) : name(name)
 {
-	std::cout << "Parameter constructor" << std::endl;
+	std::cout << "[" << this->name << "]" << std::flush;
+	std::cout << " parameter constructor" << std::endl;
 	health = 10;
 	energy = 10;
 	attackDamage = 0;
@@ -19,12 +21,15 @@ ClapTrap::ClapTrap(std::string name) : name(name)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Default destructor" << std::endl;
+	std::cout << "[" << this->name << "]" << std::flush;
+	std::cout << " default destructor" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &ct)
 {
 	*this = ct;
+	std::cout << "[" << this->name << "]" << std::flush;
+	std::cout << " copy constructor" << std::endl;
 }
 
 const	ClapTrap&	ClapTrap::operator=(const ClapTrap& ct)
@@ -36,6 +41,8 @@ const	ClapTrap&	ClapTrap::operator=(const ClapTrap& ct)
 		this->attackDamage = ct.attackDamage;
 		this->name = ct.name;
 	}
+	std::cout << "[" << this->name << "]" << std::flush;
+	std::cout << " copy assignment constructor" << std::endl;
 	return (*this);
 }
 
@@ -52,14 +59,14 @@ void	ClapTrap::attack(const std::string& target)
 		std::cout << " ClapTrap doesn't have any Health left" << std::endl;
 		return ;
 	}
-	std::cout << " " << target << " loses " << attackDamage << " hit points." << std::endl;
+	std::cout << " " << target << " loses " << attackDamage << " hit points" << std::endl;
 	energy--;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
 	std::cout << "[" << this->name << "]" << std::flush;
-	if (health - amount <= 0 || health == 0)
+	if (static_cast<int>(amount) >= health || health == 0)
 	{
 		health = 0;
 		std::cout << " ClapTrap lost all his Health" << std::endl;
@@ -71,6 +78,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
+	int	prevHealth = health;
 	std::cout << "[" << this->name << "]" << std::flush;
 	if (energy <= 0)
 	{
@@ -82,7 +90,6 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << " ClapTrap doesn't have any Health left" << std::endl;
 		return ;
 	}
-	std::cout << " ClapTrap healed " << amount << " hit points" << std::endl;
 	if ((health + amount) >= 10)
 	{
 		health = 10;
@@ -91,6 +98,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	{
 		health += amount;
 	}
+	std::cout << " ClapTrap healed " << health - prevHealth << " hit points" << std::endl;
 	energy--;
 }
 
