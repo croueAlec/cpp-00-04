@@ -12,6 +12,7 @@ public:
 
 	void	guardGate(void);
 
+	void	attack(const std::string& target);
 	void	beRepaired(unsigned int amount);
 
 	void	announce(void);

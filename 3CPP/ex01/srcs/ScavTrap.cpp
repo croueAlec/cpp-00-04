@@ -57,6 +57,23 @@ void ScavTrap::guardGate(void)
 	std::cout << " is now in Gate keeper mode" << std::endl;
 }
 
+void	ScavTrap::attack(const std::string& target)
+{
+	this->announce();
+	if (energy <= 0)
+	{
+		std::cout << " No Energy left to attack" << std::endl;
+		return ;
+	}
+	else if (health <= 0)
+	{
+		std::cout << " doesn't have any Health left" << std::endl;
+		return ;
+	}
+	std::cout << " " << target << " loses " << attackDamage << " hit points due to ScavTrap attack" << std::endl;
+	energy--;
+}
+
 void	ScavTrap::beRepaired(unsigned int amount)
 {
 	int	prevHealth = health;
