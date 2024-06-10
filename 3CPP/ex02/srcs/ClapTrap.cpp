@@ -91,14 +91,15 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << " doesn't have any Health left" << std::endl;
 		return ;
 	}
-	if ((health + amount) >= 10)
-	{
-		health = 10;
-	}
-	else
-	{
-		health += amount;
-	}
+	// if ((health + amount) >= 10)
+	// {
+	// 	health = 10;
+	// }
+	// else
+	// {
+	// 	health += amount;
+	// }
+	health += amount;
 	std::cout << " healed " << health - prevHealth << " hit points" << std::endl;
 	energy--;
 }

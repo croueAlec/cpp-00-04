@@ -74,32 +74,32 @@ void	ScavTrap::attack(const std::string& target)
 	energy--;
 }
 
-void	ScavTrap::beRepaired(unsigned int amount)
-{
-	int	prevHealth = health;
+// void	ScavTrap::beRepaired(unsigned int amount)
+// {
+// 	int	prevHealth = health;
 
-	this->announce();
-	if (energy <= 0)
-	{
-		std::cout << " No energy left to repair itself" << std::endl;
-		return ;
-	}
-	else if (health <= 0)
-	{
-		std::cout << " doesn't have any Health left" << std::endl;
-		return ;
-	}
-	if ((health + amount) >= 100)
-	{
-		health = 100;
-	}
-	else
-	{
-		health += amount;
-	}
-	std::cout << " healed " << health - prevHealth << " hit points" << std::endl;
-	energy--;
-}
+// 	this->announce();
+// 	if (energy <= 0)
+// 	{
+// 		std::cout << " No energy left to repair itself" << std::endl;
+// 		return ;
+// 	}
+// 	else if (health <= 0)
+// 	{
+// 		std::cout << " doesn't have any Health left" << std::endl;
+// 		return ;
+// 	}
+// 	if ((health + amount) >= 100)
+// 	{
+// 		health = 100;
+// 	}
+// 	else
+// 	{
+// 		health += amount;
+// 	}
+// 	std::cout << " healed " << health - prevHealth << " hit points" << std::endl;
+// 	energy--;
+// }
 
 void	ScavTrap::announce(void)
 {
