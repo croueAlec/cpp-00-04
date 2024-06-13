@@ -6,7 +6,7 @@
 #    By: acroue <acroue@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2024/06/10 19:09:41 by acroue           ###   ########.fr        #
+#    Updated: 2024/06/13 19:17:08 by acroue           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,9 @@ INCLUDES_FLAGS := $(addprefix -I , $(INCLUDES))
 
 SRC := \
 	AMateria.cpp \
+	Character.cpp \
+	Cure.cpp \
+	Ice.cpp \
 	main.cpp
 
 OBJ := $(patsubst %.cpp,$(OBJS_DIR)/%.o,$(SRC))

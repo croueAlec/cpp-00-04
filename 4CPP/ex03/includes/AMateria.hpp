@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <iostream>
 #include "ICharacter.hpp"
 
 class AMateria
@@ -9,7 +10,7 @@ protected:
 public:
 	AMateria();
 	AMateria(std::string const & type);
-	~AMateria();
+	virtual ~AMateria();
 	AMateria(const AMateria& other);
 	AMateria& operator=(const AMateria& other);
 
