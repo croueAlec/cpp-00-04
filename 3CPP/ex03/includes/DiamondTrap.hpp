@@ -13,7 +13,7 @@ public:
 	DiamondTrap(const DiamondTrap& dt);
 	const	DiamondTrap& operator=(const DiamondTrap& dt);
 
-	void	beRepaired(unsigned int amount);
+	// void	beRepaired(unsigned int amount);
 
 	void	whoAmI(void);
 

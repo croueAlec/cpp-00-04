@@ -6,14 +6,14 @@
 #    By: acroue <acroue@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2024/06/06 16:52:36 by acroue           ###   ########.fr        #
+#    Updated: 2024/06/21 12:27:54 by acroue           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 
 #	Program name
-NAME = ClapTrap
+NAME = DiamondTrap
 
 #	Colors
 DEFAULT    = \033[0m

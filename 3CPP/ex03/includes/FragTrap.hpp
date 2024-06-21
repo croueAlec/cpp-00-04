@@ -12,7 +12,7 @@ public:
 
 	void	highFivesGuys(void);
 
-	virtual void	beRepaired(unsigned int amount);
+	// virtual void	beRepaired(unsigned int amount);
 
 	void	announce(void);
 };
