@@ -18,10 +18,7 @@ Cure::Cure(const Cure& other) : AMateria(other)
 
 Cure& Cure::operator=(const Cure& other)
 {
-	if (this != &other)
-	{
-		this->AMateria::operator=(other);
-	}
+	(void)other;
 	std::cout << "Copy assignment operator cure class" << std::endl;
 	return (*this);
 }

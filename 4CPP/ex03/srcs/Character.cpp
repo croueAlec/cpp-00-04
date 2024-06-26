@@ -5,18 +5,30 @@ Character::Character()
 {
 	this->name = "default";
 	this->size = 0;
+	for (size_t i = 0; i < INV_SIZE; i++)
+	{
+		this->inventory[i] = NULL;
+	}
 	std::cout << "Default constructor for the Character class" << std::endl;
 }
 
 Character::~Character()
 {
 	std::cout << "Default destructor for the Character class" << std::endl;
+	for (int i = 0; i < size; i++)
+	{
+		delete inventory[i];
+	}
 }
 
 Character::Character(std::string name)
 {
 	this->name = name;
 	this->size = 0;
+	for (size_t i = 0; i < INV_SIZE; i++)
+	{
+		this->inventory[i] = NULL;
+	}
 	std::cout << "Parameted constructor for the Character class" << std::endl;
 }
 
@@ -31,6 +43,15 @@ Character&	Character::operator=(const Character& other)
 	if (this != &other)
 	{
 		this->name = other.getName();
+		for (int i = 0; i < this->size; i++)
+		{
+			delete this->inventory[i];
+		}
+		for (int i = 0; i < other.size; i++)
+		{
+			this->inventory[i] = other.inventory[i];
+		}
+		this->size = other.size;
 	}
 	std::cout << "Copy assignment constructor for the Character class" << std::endl;
 	return (*this);

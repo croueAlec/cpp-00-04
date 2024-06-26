@@ -18,10 +18,7 @@ Ice::Ice(const Ice& other) : AMateria(other)
 
 Ice& Ice::operator=(const Ice& other)
 {
-	if (this != &other)
-	{
-		this->AMateria::operator=(other);
-	}
+	(void)other;
 	std::cout << "Copy assignment operator ice class" << std::endl;
 	return (*this);
 }

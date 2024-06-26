@@ -6,7 +6,7 @@
 #    By: acroue <acroue@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2024/06/13 19:17:08 by acroue           ###   ########.fr        #
+#    Updated: 2024/06/26 17:03:44 by acroue           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,8 @@ SRC := \
 	Character.cpp \
 	Cure.cpp \
 	Ice.cpp \
-	main.cpp
+	main.cpp \
+	MateriaSource.cpp
 
 OBJ := $(patsubst %.cpp,$(OBJS_DIR)/%.o,$(SRC))
 DEPS := $(patsubst %.cpp,$(OBJS_DIR)/%.d,$(SRC))
