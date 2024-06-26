@@ -69,7 +69,7 @@ void	Character::equip(AMateria* m)
 		std::cout << this->getName() << "'s inventory is full" << std::endl;
 		return ;
 	}
-	inventory[size] = m;
+	inventory[size] = m->clone();
 	size++;
 	std::cout << this->getName() << " equipped " << m->getType() << " materia" << std::endl;;
 }

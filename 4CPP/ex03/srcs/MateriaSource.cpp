@@ -4,6 +4,7 @@
 MateriaSource::MateriaSource() {
 	std::cout << "Default constructor called for MateriaSource" << std::endl;
 
+	size = 0;
 	for (size_t i = 0; i < INV_SIZE; i++)
 	{
 		this->storedMateria[i] = NULL;
@@ -13,6 +14,7 @@ MateriaSource::MateriaSource() {
 MateriaSource::~MateriaSource() {
 	std::cout << "Default destructor called for MateriaSource" << std::endl;
 
+	size = 0;
 	for (size_t i = 0; i < INV_SIZE; i++)
 	{
 		delete this->storedMateria[i];
@@ -41,7 +43,8 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& other) {
 }
 
 void	MateriaSource::learnMateria(AMateria* materia) {
-	if (size == 4) {
+	if (size == INV_SIZE) {
+		std::cout << "Materia source is full" << std::endl;
 		return;
 	}
 
