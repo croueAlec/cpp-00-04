@@ -18,10 +18,23 @@ Cat&	Cat::operator=(const Cat& other)
 	if (this != &other)
 	{
 		this->type = other.type;
+		delete this->brain;
 		this->brain = new Brain(*other.brain);
 	}
 	std::cout << "Assignment copy constructor cat class" << std::endl;
 	return (*this);
+}
+
+Cat&	Cat::operator=(const Animal& other)
+{
+	if (typeid(*this) == typeid(other))
+	{
+		return Cat::operator=((Cat &)other);
+	}
+	else
+	{
+		return *this;
+	}
 }
 
 Cat::Cat(const Cat& other)
